@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Libros</title>
+    <link rel="stylesheet" href="/views/books/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de Libros</h1>
+        <table class="book-table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Edición</th>
+                    <th>Derechos de Autor</th>
+                    <th>Idioma</th>
+                    <th>Páginas</th>
+                    <th>Autor</th>
+                    <th>Editorial</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#books}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{edition}}</td>
+                    <td>{{copyright}}</td>
+                    <td>{{language}}</td>
+                    <td>{{pages}}</td>
+                    <td><a href="/authors/{{author_id}}">{{authorName}}</a></td>
+                    <td><a href="/publishers/{{publisher_id}}">{{publisherName}}</a></td>
+                    <td>
+                        <a class="button view" href="/books/{{id_book}}">Ver</a>
+                        <a class="button edit" href="/books/{{id_book}}/edit">Editar</a>
+                        <a class="button delete" href="/books/{{id_book}}/delete" onclick="return confirm('¿Está seguro de querer eliminar este libro?');">Eliminar</a>
+                    </td>
+                </tr>
+                {{/books}}
+            </tbody>
+        </table>
+        <a class="button button-primary" href="/books/create">Agregar Nuevo Libro</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Libro</title>
+    <link rel="stylesheet" href="/views/books/css/create.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Crear Libro</h1>
+        <form action="/books" method="post" class="book-form">
+            <label for="titleInput">Título</label>
+            <input
+                type="text"
+                placeholder="Ingrese el título del libro"
+                name="title"
+                id="titleInput"
+                required
+                class="input-field"
+            />
+            <label for="editionInput">Edición</label>
+            <input
+                type="text"
+                placeholder="Ingrese la edición del libro"
+                name="edition"
+                id="editionInput"
+                class="input-field"
+            />
+            <label for="copyrightInput">Derechos de Autor</label>
+            <input
+                type="number"
+                placeholder="Año de los derechos de autor"
+                name="copyright"
+                id="copyrightInput"
+                class="input-field"
+            />
+            <label for="languageInput">Idioma</label>
+            <input
+                type="text"
+                placeholder="Ingrese el idioma del libro"
+                name="language"
+                id="languageInput"
+                class="input-field"
+            />
+            <label for="pagesInput">Páginas</label>
+            <input
+                type="number"
+                placeholder="Ingrese el número de páginas"
+                name="pages"
+                id="pagesInput"
+                class="input-field"
+            />
+            <label for="authorInput">Autor</label>
+            <select id="authorInput" name="author_id" class="input-field">
+                {{#authors}}
+                <option value="{{id_author}}">{{author}}</option>
+                {{/authors}}
+            </select>
+            <label for="publisherInput">Editorial</label>
+            <select id="publisherInput" name="publisher_id" class="input-field">
+                {{#publishers}}
+                <option value="{{id_publisher}}">{{publisher}}</option>
+                {{/publishers}}
+            </select>
+            <input class="button-primary" type="submit" value="Crear" />
+            <!-- Boton de volver -->
+            <a class="button-secondary" href="/">Volver</a>
+        </form>
+    </div>
+</body>
+</html>
