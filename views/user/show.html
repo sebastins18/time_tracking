@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Usuario</title>
+    <link rel="stylesheet" href="/views/user/css/show.css"> 
+</head>
+<body>
+    <div class="container">
+        {{#users}}
+        <div class="user-details">
+            <p>Username: <span class="user-info">{{username}}</span></p> 
+            <p>Contraseña: <span class="user-info">{{password}}</span></p> 
+            <p>Rol: <span class="user-info">{{role}}</span></p>
+            <p>Email: <span class="user-info">{{email}}</span></p>
+        </div>
+        {{/users}}
+        {{^users}}
+        <p class="not-found">Usuario no encontrado.</p>
+        {{/users}}
+        <a class="button-secondary" href="/user">Volver</a>
+    </div>
+</body>
+</html>

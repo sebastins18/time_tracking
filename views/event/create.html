@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Evento</title>
+    <link rel="stylesheet" href="/views/event/css/create.css">
+</head>
+<body>
+<div class="container">
+    <h1>Crear Evento</h1>
+    <form action="/event/create2" method="post">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="start_time">Hora de Inicio:</label>
+        <input type="datetime-local" id="start_time" name="start_time" required>
+
+        <label for="end_time">Hora de Fin:</label>
+        <input type="datetime-local" id="end_time" name="end_time" required>
+
+        <label for="type">Tipo de Evento:</label>
+        <select id="type" name="type">
+            <option value="Meeting">Reunión</option>
+            <option value="Task">Tarea</option>
+            <option value="Other">Otro</option>
+        </select>
+
+        <button type="submit">Crear Evento</button>
+    </form>
+</div>
+</body>
+</html>

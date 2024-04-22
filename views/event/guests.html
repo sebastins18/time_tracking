@@ -1,0 +1,25 @@
+<!-- File: views/event/guests.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invitados del Evento</title>
+    <link rel="stylesheet" href="/views/event/css/guests.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Invitados del Evento {{eventId}}</h1>
+        {{#guests}}
+            <div class="guest-item">
+                <span>{{username}} - {{status}}</span>
+                <a class="button delete" href="/event/{{event_id}}/guests/{{user_id}}/delete" onclick="return confirm('¿Está seguro de querer eliminar este invitado?');">Eliminar</a>
+            </div>
+        {{/guests}}
+        {{^guests}}
+            <p>No hay invitados para mostrar.</p>
+        {{/guests}}
+        <a href="/event/{{eventId}}/guests/add" class="button add">Agregar Invitados</a>
+        <a href="/user/dashboard_user" class="button back">Volver al Dashboard</a>
+    </div>
+</body>
+</html>

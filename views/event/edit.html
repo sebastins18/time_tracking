@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Evento</title>
+    <link rel="stylesheet" href="/views/event/css/edit.css">
+</head>
+<body>
+    <div class="container">
+        {{#event}}
+        <form action="/event/{{id_event}}" method="post" class="event-form">
+            <input type="hidden" name="_method" value="PUT">
+            
+            <h2>Editar Evento</h2>
+
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" value="{{title}}" required>
+
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required>{{description}}</textarea>
+
+            <label for="start_time">Inicio:</label>
+            <input type="datetime-local" id="start_time" name="start_time" value="{{start_time}}" required>
+
+            <label for="end_time">Fin:</label>
+            <input type="datetime-local" id="end_time" name="end_time" value="{{end_time}}" required>
+
+            <label for="type">Tipo:</label>
+            <select id="type" name="type" required>
+                <option value="Meeting" {{type=="Meeting" ? "selected" : ""}}>Reunión</option>
+                <option value="Task" {{type=="Task" ? "selected" : ""}}>Tarea</option>
+                <option value="Other" {{type=="Other" ? "selected" : ""}}>Otro</option>
+            </select>
+
+            <div class="form-actions">
+                <button type="submit" class="button save">Guardar Cambios</button>
+                <a href="/user/dashboard_user" class="button cancel">Cancelar</a>
+            </div>
+        </form>
+        {{/event}}
+        {{^event}}
+        <p class="not-found">Evento no encontrado.</p>
+        {{/event}}
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-details h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.event-details p, .event-details h3 {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.guest-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.guest-list li {
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px; 
+}
+
+.edit {
+    background-color: #5cb85c; 
+    width: auto; 
+    margin-top: 10px;
+    display: block;
+}
+
+.delete {
+    background-color: #d9534f; 
+    width: auto;
+    margin-top: 10px;
+    display: block;
+}
+
+.back {
+    background-color: #0275d8; 
+    width: auto; 
+    margin-top: 10px;
+    display: block; 
+}
+
+.view-guests{
+    background-color: #f0ad4e;
+    width: auto; 
+    margin-top: 10px;
+    display: block; 
+}
+
+@media (max-width: 768px) {
+    .action-buttons .button, .back-button .button {
+        width: 100%; 
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" href="/views/user/css/create.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Crear Usuario</h1>
+        <form action="/user" method="post" class="user-form">
+            <label for="usernameInput">Nombre de Usuario</label>
+            <input
+                type="text"
+                placeholder="Ingrese el nombre de usuario"
+                name="username"
+                id="usernameInput"
+                required
+                class="input-field"
+            />
+            <label for="passwordInput">Contraseña</label>
+            <input
+                type="password"
+                placeholder="Ingrese la contraseña"
+                name="password"
+                id="passwordInput"
+                required
+                class="input-field"
+            />
+            <label for="roleInput">Rol</label>
+            <select id="roleInput" name="role" class="input-field">
+                <option value="admin">Administrador</option>
+                <option value="user">Usuario</option>
+            </select>
+            <label for="emailInput">Email</label>
+            <input
+                type="email"
+                placeholder="Ingrese el correo electrónico"
+                name="email"
+                id="emailInput"
+                required
+                class="input-field"
+            />
+            <input class="button-primary" type="submit" value="Crear" />
+            <a class="button-secondary" href="/user">Volver</a>
+        </form>
+    </div>
+</body>
+</html>

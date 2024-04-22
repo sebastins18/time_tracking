@@ -1,0 +1,96 @@
+/* Nuevo diseño para /views/books/css/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9ecef;
+    color: #212529;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.table-container {
+    overflow-x: auto;
+    background-color: #f8f9fa;
+    padding: 1px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.button {
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.view { background-color: #28a745; }
+.edit { background-color: #17a2b8; }
+.delete { background-color: #dc3545; }
+
+.button-primary {
+    background-color: #007bff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.button-secondary {
+    padding: 8px 16px;
+    background-color: #6c757d;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 15px auto;
+    }
+    .button {
+        padding: 6px 10px;
+        margin-right: 5px;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="/views/user/css/edit.css">
+</head>
+<body>
+    <div class="container">
+        <h2>{{title}}</h2>
+        {{#users}}
+        <form action="/user/{{id_user}}" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            
+            <label for="usernameInput">Nombre de Usuario</label>
+            <input type="text" name="username" id="usernameInput" value="{{username}}" required class="input-field">
+
+            <label for="passwordInput">Contraseña</label>
+            <input type="password" name="password" id="passwordInput" value="{{password}}" required class="input-field">
+
+            <label for="roleInput">Rol</label>
+            <select id="roleInput" name="role" class="input-field">
+                <option value="admin" {{selectedAdmin}}>Administrador</option>
+                <option value="user" {{selectedUser}}>Usuario</option>
+            </select>
+
+            <label for="emailInput">Email</label>
+            <input type="email" name="email" id="emailInput" value="{{email}}" required class="input-field">
+
+            <input class="button-primary" type="submit" value="Actualizar">
+            <a class="button-secondary" href="/user">Volver</a>
+        </form>
+        {{/users}}
+    </div>
+</body>
+</html>

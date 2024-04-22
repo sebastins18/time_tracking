@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Usuarios</title>
+    <link rel="stylesheet" href="/views/user/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de Usuarios</h1>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre de Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Rol</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#users}}
+                <tr>
+                    <td>{{id_user}}</td>
+                    <td>{{username}}</td>
+                    <td>{{password}}</td> 
+                    <td>{{role}}</td>
+                    <td>{{email}}</td>
+                    <td>
+                        <a class="button view" href="/user/{{id_user}}">Ver</a>
+                        <a class="button edit" href="/user/{{id_user}}/edit">Editar</a>
+                        <a class="button delete" href="/user/{{id_user}}/delete" onclick="return confirm('¿Está seguro de querer eliminar este usuario?');">Eliminar</a>
+                    </td>
+                </tr>
+                {{/users}}
+            </tbody>
+        </table>
+        <a class="button button-primary" href="/user/create">Agregar Nuevo Usuario</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- File: views/event/add_guests.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Invitados al Evento</title>
+    <link rel="stylesheet" href="/views/event/css/add_guests.css">
+</head>
+<body>
+    <div class="container">
+        {{#event}}
+        <h1>Agregar Invitados al Evento: {{title}}</h1>
+        <form action="/event/{{id_event}}/add_guests" method="post">
+            <input type="hidden" name="event_id" value="{{id_event}}">
+            
+            {{#users}}
+            <div class="user">
+                <input type="checkbox" id="user{{id_user}}" name="guests[]" value="{{id_user}}">
+                <label for="user{{id_user}}">{{username}}</label>
+            </div>
+            {{/users}}
+            <select name="status">
+                <option value="Invited">Invitado</option>
+                <option value="Confirmed">Confirmado</option>
+                <option value="Declined">Declinado</option>
+            </select>
+            <button type="submit" class="button add">Agregar Invitados</button>
+        </form>
+        <a href="/event/{{id_event}}" class="button back">Volver al Detalle del Evento</a>
+        {{/event}}
+    </div>
+</body>
+</html>

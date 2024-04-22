@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Evento</title>
+    <link rel="stylesheet" href="/views/event/css/show.css">
+</head>
+<body>
+    <div class="container">
+        {{#event}}
+        <div class="event-details">
+            <h2>{{title}}</h2>
+            <p><strong>Descripción:</strong> {{description}}</p>
+            <p><strong>Inicio:</strong> {{start_time}}</p>
+            <p><strong>Fin:</strong> {{end_time}}</p>
+            <p><strong>Tipo:</strong> {{type}}</p>
+            <h3>Invitados</h3>
+            <ul class="guest-list">
+                {{#guests}}
+                <li>{{username}} - {{status}}</li>
+                {{/guests}}
+            </ul>
+            <div class="action-buttons">
+                <a href="/event/{{id_event}}/edit" class="button edit">Editar</a>
+                <a class="button delete" href="/event/{{id_event}}/delete" onclick="return confirm('¿Está seguro de querer eliminar este evento?');">Eliminar</a>
+                <a href="/event/{{id_event}}/guests" class="button view-guests">Editar Invitados</a>
+                <a href="/user/dashboard_user" class="button back">Volver al Dashboard</a>
+            </div>
+        </div>
+        {{/event}}
+        {{^event}}
+        <p class="not-found">Evento no encontrado.</p>
+        {{/event}}
+    </div>
+</body>
+</html>

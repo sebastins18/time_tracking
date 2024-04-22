@@ -1,0 +1,43 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.admin-actions {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-actions li {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.admin-actions li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-actions li a:hover {
+    text-decoration: underline;
+}
